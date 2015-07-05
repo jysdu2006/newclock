@@ -31,8 +31,9 @@ function get_machine(){
 			$.get('/newclock/server/info.php',{type:2,num:i},function(jsondata){
 				var data=eval(jsondata);
 				var temp="";
+				var id=data[data.length-1];
 				for(var j=0;j<data.length-1;j++)
-					temp+='<div class="showtime" id="machine'+i+j+'">'+data[j]+'</div>';
+					temp+='<div class="showtime" id="machine'+id+j+'">'+data[j]+'</div>';
 				var $machine=$(temp);
 				$machine.appendTo($('#group'+data[data.length-1]));
 			});
