@@ -14,7 +14,6 @@ function get_part(){
 }
 get_part();
 function full_cont(){
-	alert(window.partcount);
 	if(partcount>0){
 		var machine_list='';
 		for(var i=0;i<partcount;i++){
@@ -32,11 +31,23 @@ function get_machine(){
 				var data=eval(jsondata);
 				var temp="";
 				var id=data[data.length-1];
-				for(var j=0;j<data.length-1;j++)
-					temp+='<div class="showtime" id="machine'+id+j+'">'+data[j]+'</div>';
+				for(var j=0;j<data.length-1;j=j+3)
+					temp+='<div class="showtime" id="machine'+id+j+'">'+data[j]+'<br/><br/>'+data[j+1]+'<br/>'+data[j+2]+'</div>';
 				var $machine=$(temp);
 				$machine.appendTo($('#group'+data[data.length-1]));
 			});
 		}
 	}
 }
+
+function execute_time(){
+	$.get('/newclock/server/info.php',{type:3},function(jsondata){
+		var data=eval(jsondata);
+		var temp="";
+		for(var i=0;i<data.length;i=i+3)
+			temp+=data[i]+"<br/>"+data[i+1]+"<br/>"+data[i+2];
+		$('#standtime').text(temp);
+	});
+}
+
+execute_time();

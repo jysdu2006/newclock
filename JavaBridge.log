@@ -1,127 +1,14 @@
-Jul 03 16:07:38 JavaBridge INFO : VM                  : 1.8.0_20@http://java.oracle.com/
-Jul 03 16:07:38 JavaBridge INFO : JavaBridge version             : 6.2.1    
-Jul 03 16:07:38 JavaBridge INFO : logFile             : JavaBridge.log
-Jul 03 16:07:38 JavaBridge INFO : default logLevel    : 3
-Jul 03 16:07:38 JavaBridge INFO : socket              : HTTP_LOCAL:8080
-Jul 03 16:07:38 JavaBridge INFO : java.ext.dirs       : C:\Program Files\Java\jre1.8.0_20\lib\ext;C:\Windows\Sun\Java\lib\ext
-Jul 03 16:07:38 JavaBridge INFO : php.java.bridge.base: C:\Users\Administrator.12XZ-20140719YK
-Jul 03 16:07:38 JavaBridge INFO : thread pool size    : 20
-Jul 03 16:07:38 JavaBridge INFO : JavaBridgeRunner started on port INET_LOCAL:8080
-Jul 03 16:32:11 JavaBridge INFO : 1e73dabd@2a3b706e No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:32:12 JavaBridge INFO : 3fb601d2@3171e854 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:32:13 JavaBridge INFO : 4ce39b21@42247ccd No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:32:18 JavaBridge INFO : 7f97931d@2a3b706e No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:32:20 JavaBridge INFO : 354e6aa2@3171e854 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:32:27 JavaBridge INFO : 461bf051@42247ccd No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:49:22 JavaBridge INFO : 497d7d1a@2a3b706e No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:49:22 JavaBridge ERROR: An exception occured: java.lang.ClassNotFoundException: webtime
-java.lang.ClassNotFoundException: webtime
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Unknown Source)
-	at php.java.bridge.Util.classForName(Util.java:1518)
-	at php.java.bridge.JavaBridge.CreateObject(JavaBridge.java:445)
-	at php.java.bridge.Request.handleRequest(Request.java:458)
-	at php.java.bridge.Request.handleRequests(Request.java:500)
-	at php.java.bridge.JavaBridge.handleRequests(JavaBridge.java:150)
-	at php.java.bridge.JavaBridgeRunner.doPut(JavaBridgeRunner.java:207)
-	at php.java.bridge.http.HttpServer.service(HttpServer.java:289)
-	at php.java.bridge.http.HttpServer$Runner.run(HttpServer.java:205)
-	at php.java.bridge.ThreadPool$Delegate.run(ThreadPool.java:60)
-Jul 03 16:51:52 JavaBridge INFO : 704ce26f@3171e854 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:51:52 JavaBridge ERROR: An exception occured: java.lang.ClassNotFoundException: abc
-java.lang.ClassNotFoundException: abc
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Unknown Source)
-	at php.java.bridge.Util.classForName(Util.java:1518)
-	at php.java.bridge.JavaBridge.CreateObject(JavaBridge.java:445)
-	at php.java.bridge.Request.handleRequest(Request.java:458)
-	at php.java.bridge.Request.handleRequests(Request.java:500)
-	at php.java.bridge.JavaBridge.handleRequests(JavaBridge.java:150)
-	at php.java.bridge.JavaBridgeRunner.doPut(JavaBridgeRunner.java:207)
-	at php.java.bridge.http.HttpServer.service(HttpServer.java:289)
-	at php.java.bridge.http.HttpServer$Runner.run(HttpServer.java:205)
-	at php.java.bridge.ThreadPool$Delegate.run(ThreadPool.java:60)
-Jul 03 16:52:07 JavaBridge INFO : 31976f6@42247ccd No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:52:07 JavaBridge ERROR: An exception occured: java.lang.ClassNotFoundException: abc.jar
-java.lang.ClassNotFoundException: abc.jar
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Unknown Source)
-	at php.java.bridge.Util.classForName(Util.java:1518)
-	at php.java.bridge.JavaBridge.CreateObject(JavaBridge.java:445)
-	at php.java.bridge.Request.handleRequest(Request.java:458)
-	at php.java.bridge.Request.handleRequests(Request.java:500)
-	at php.java.bridge.JavaBridge.handleRequests(JavaBridge.java:150)
-	at php.java.bridge.JavaBridgeRunner.doPut(JavaBridgeRunner.java:207)
-	at php.java.bridge.http.HttpServer.service(HttpServer.java:289)
-	at php.java.bridge.http.HttpServer$Runner.run(HttpServer.java:205)
-	at php.java.bridge.ThreadPool$Delegate.run(ThreadPool.java:60)
-Jul 03 16:54:55 JavaBridge INFO : 505cc730@2a3b706e No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:54:55 JavaBridge ERROR: An exception occured: java.lang.ClassNotFoundException: test
-java.lang.ClassNotFoundException: test
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Unknown Source)
-	at php.java.bridge.Util.classForName(Util.java:1518)
-	at php.java.bridge.JavaBridge.CreateObject(JavaBridge.java:445)
-	at php.java.bridge.Request.handleRequest(Request.java:458)
-	at php.java.bridge.Request.handleRequests(Request.java:500)
-	at php.java.bridge.JavaBridge.handleRequests(JavaBridge.java:150)
-	at php.java.bridge.JavaBridgeRunner.doPut(JavaBridgeRunner.java:207)
-	at php.java.bridge.http.HttpServer.service(HttpServer.java:289)
-	at php.java.bridge.http.HttpServer$Runner.run(HttpServer.java:205)
-	at php.java.bridge.ThreadPool$Delegate.run(ThreadPool.java:60)
-Jul 03 16:55:10 JavaBridge INFO : 4176b1c6@3171e854 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:55:10 JavaBridge ERROR: An exception occured: java.lang.ClassNotFoundException: test
-java.lang.ClassNotFoundException: test
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.net.URLClassLoader$1.run(Unknown Source)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Unknown Source)
-	at php.java.bridge.Util.classForName(Util.java:1518)
-	at php.java.bridge.JavaBridge.CreateObject(JavaBridge.java:445)
-	at php.java.bridge.Request.handleRequest(Request.java:458)
-	at php.java.bridge.Request.handleRequests(Request.java:500)
-	at php.java.bridge.JavaBridge.handleRequests(JavaBridge.java:150)
-	at php.java.bridge.JavaBridgeRunner.doPut(JavaBridgeRunner.java:207)
-	at php.java.bridge.http.HttpServer.service(HttpServer.java:289)
-	at php.java.bridge.http.HttpServer$Runner.run(HttpServer.java:205)
-	at php.java.bridge.ThreadPool$Delegate.run(ThreadPool.java:60)
-Jul 03 16:55:37 JavaBridge INFO : 32501380@42247ccd No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:55:41 JavaBridge INFO : 59cc799f@2a3b706e No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:55:47 JavaBridge INFO : 10631d20@3171e854 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:59:26 JavaBridge INFO : 2b50e4e3@42247ccd No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:59:29 JavaBridge INFO : 4f43fa13@2a3b706e No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:59:30 JavaBridge INFO : 311030e4@3171e854 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
-Jul 03 16:59:35 JavaBridge INFO : 633689b9@42247ccd No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
+Jul 05 16:21:07 JavaBridge INFO : VM                  : 1.8.0_20@http://java.oracle.com/
+Jul 05 16:21:07 JavaBridge INFO : JavaBridge version             : 6.2.1    
+Jul 05 16:21:07 JavaBridge INFO : logFile             : JavaBridge.log
+Jul 05 16:21:07 JavaBridge INFO : default logLevel    : 3
+Jul 05 16:21:07 JavaBridge INFO : socket              : HTTP_LOCAL:8080
+Jul 05 16:21:07 JavaBridge INFO : java.ext.dirs       : C:\Program Files\Java\jre1.8.0_20\lib\ext;C:\Windows\Sun\Java\lib\ext
+Jul 05 16:21:07 JavaBridge INFO : php.java.bridge.base: C:\Users\Administrator.12XZ-20140719YK
+Jul 05 16:21:07 JavaBridge INFO : thread pool size    : 20
+Jul 05 16:21:07 JavaBridge INFO : JavaBridgeRunner started on port INET_LOCAL:8080
+Jul 05 16:21:11 JavaBridge INFO : 2fa838fc@5825cf93 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
+Jul 05 16:22:02 JavaBridge INFO : 7089bf46@5825cf93 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
+Jul 05 16:22:23 JavaBridge INFO : 1e44b50a@5825cf93 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
+Jul 05 16:22:25 JavaBridge INFO : 594144f7@5825cf93 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
+Jul 05 16:22:25 JavaBridge INFO : 4e930d4f@5825cf93 No visible constructor found in: java.lang.System, returning the class instead of an instance; this may not be what you want. Please correct this error or please use the function java("java.lang.System") instead.
