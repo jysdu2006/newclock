@@ -10,7 +10,7 @@
 	width:80%;
 	margin: auto;
 	min-width: 1000px;
-	height: 250px;
+	height: 200px;
 	text-align: center;
 }
 
@@ -22,6 +22,9 @@
 	height: 100%;
 	display: inline-block;
 	margin: auto;
+	color:#ffffff;
+	float: left;
+	margin-right: 40px;
 }
 
 #statistic{
@@ -32,6 +35,9 @@
 	height: 100%;
 	display: inline-block;
 	margin: auto;
+	color:#ffffff;
+	float: left;
+	margin-right: 40px;
 }
 
 #standtime{
@@ -42,6 +48,9 @@
 	height: 100%;
 	display: inline-block;
 	margin:auto;
+	color:#ffffff;
+	float: left;
+	line-height: 50px;
 }
 
 .divide{

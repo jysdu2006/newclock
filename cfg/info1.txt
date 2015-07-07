@@ -1,1 +1,1 @@
-192.168.60.145 2 root jinying
+127.0.0.1 1 administrator jinying
