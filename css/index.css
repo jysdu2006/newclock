@@ -38,6 +38,7 @@
 	color:#ffffff;
 	float: left;
 	margin-right: 40px;
+	padding-top: 40px;
 }
 
 #standtime{
@@ -51,6 +52,7 @@
 	color:#ffffff;
 	float: left;
 	line-height: 50px;
+	padding-top: 20px;
 }
 
 .divide{
@@ -92,7 +94,7 @@
 	border-radius: 8px;
 }
 
-.showtime{
+.normal{
 	background: url(/newclock/img/computer.jpg) no-repeat;
 	height: 150px;
 	width:150px;
@@ -100,6 +102,15 @@
 	display: inline-block;
 	color:#0000ff;
 }
+.danger{
+	background:url(/newclock/img/danger.png) no-repeat;
+	height: 150px;
+	width: 150px;
+	background-size: 150px 150px;
+	display: inline-block;
+	color: red;
+}
+
 .underline{
 	width: 100%;
 	height:35px;
