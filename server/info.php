@@ -54,6 +54,24 @@ if($type==='3'){
 	echo(json_encode($data));
 }
 
+
+if($type==='4'){
+	$nametmp=$_GET['filename'];
+	$num=$_GET['num'];
+	$filename="d:/clock/result/".$nametmp.".txt";
+	$data=array();
+	$file=fopen($filename,'r');
+	$temp=fgets($file);
+	$arr=explode(" ", $temp);
+	$data[]=$nametmp;
+	$data[]=$arr[1];
+	$data[]=$arr[2];
+	$data[]=$arr[3];
+	$data[]=$num;
+	fclose($file);
+	echo(json_encode($data));
+
+}
 /*
 if($type==='2'){
 	$num=$_GET['num'];

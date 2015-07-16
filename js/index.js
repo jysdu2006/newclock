@@ -1,3 +1,7 @@
+$(document).ready(function(){
+
+
+
 
 var partname=new Array();
 var partcount=0;
@@ -33,14 +37,16 @@ function get_machine(){
 				var temp="";
 				var id=data[data.length-1];
 				for(var j=0;j<data.length-1;j=j+4)
-					temp+='<div class="showtime" id="machine'+id+j+'">'+data[j]+'<br/><br/>'+data[j+1]+'<br/>'+data[j+2]+'<br/>'+data[j+3]+'</div>';
+				temp+='<div class="showtime" id="'+data[j]+'">'+data[j]+'<br/><br/>'+data[j+1]+'<br/>'+data[j+2]+'<br/>'+data[j+3]+'</div>';
+					//temp+='<div class="showtime" id="machine'+id+j+'">'+data[j]+'<br/><br/>'+data[j+1]+'<br/>'+data[j+2]+'<br/>'+data[j+3]+'</div>';
 				var $machine=$(temp);
-				$('#group'+data[data.length-1]).empty();
+				//$('#group'+data[data.length-1]).empty();
 				$machine.appendTo($('#group'+data[data.length-1]));
 			});
 		}
 	}
 }
+
 
 function execute_time(){
 	$.get('/newclock/server/info.php',{type:3},function(jsondata){
@@ -55,10 +61,31 @@ function execute_time(){
 	});
 }
 
-
 get_part();
-
-setInterval(get_part(),10000);
 execute_time();
-setInterval(execute_time(),10000);
+//setInterval(get_part,10000);
+//setInterval(execute_time,10000);
+
+
+function refresh_time(){
+	$machine=$('.showtime');
+	for(var i=0;i<$machine.length;i++){
+		var idname=$machine[i].id;
+		$.get('/newclock/server/info.php',{type:4,filename:idname,num:i},function(jsondata,i){
+			var data=eval(jsondata);
+			var infostring=data[0]+"<br>"+data[1]+'\n'+data[2]+'\n'+data[3];
+			var num=data[4];
+			$machine[num].textContent=infostring;
+			console.log($machine[num].textContent);
+		});
+	}
+	
+}
+//refresh_time();
+setInterval(refresh_time,3000);
+
+//setInterval(test,10000);
+
+
+});
 
