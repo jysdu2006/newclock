@@ -25,6 +25,7 @@
 	color:#ffffff;
 	float: left;
 	margin-right: 40px;
+	overflow: auto;
 }
 
 #statistic{
@@ -92,6 +93,7 @@
 	border: 1px solid #765980;
 	margin: auto;
 	border-radius: 8px;
+	display: none;
 }
 
 .normal{

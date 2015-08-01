@@ -72,6 +72,20 @@ if($type==='4'){
 	echo(json_encode($data));
 
 }
+
+if($type==='5'){
+	$filename="d:/clock/result/monitor.log";
+	$data=array();
+	$file=fopen($filename,'r');
+	while(!feof($file)){
+		$temp=fgets($file);
+		$temp=iconv("gb2312","utf-8",$temp);
+		$data[]=$temp;
+	}
+	fclose($file);
+	echo(json_encode($data));
+}
+
 /*
 if($type==='2'){
 	$num=$_GET['num'];
