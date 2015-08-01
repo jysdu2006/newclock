@@ -4,6 +4,14 @@
 	height: 45px;
 	background-color: #aaaaaa;
 	margin-bottom: 20px;
+	color: #ffff00;
+	text-align: center;
+	font-size: 20px;
+	line-height: 45px;
+}
+.pagehead span{
+	padding: 3px 10px 0px 3px;
+	color: #ffff00;
 }
 
 .totalstatus{
@@ -26,6 +34,9 @@
 	float: left;
 	margin-right: 40px;
 	overflow: auto;
+	text-align: left;
+	padding-left: 30px;
+	line-height: 30px;
 }
 
 #statistic{
@@ -84,6 +95,7 @@
 	display: inline-block;
 	margin: 20px;
 	max-width: 500px;
+	float:left;
 }
 
 
