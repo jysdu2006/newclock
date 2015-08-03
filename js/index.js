@@ -50,8 +50,9 @@ function get_machine(){
 				//$('#group'+data[data.length-1]).empty();
 				$machine.appendTo($('#group'+data[data.length-1]));
 				refresh_time();
-				setInterval(refresh_time,100000);
+				//setInterval(refresh_time,100000);
 				//setInterval(addtime,1000);
+				new_refresh_time();
 			});
 		}
 	}
@@ -123,6 +124,65 @@ function refresh_time(){
 	}
 	
 }
+
+
+function get_new_time(idname){
+	$machine=$('.normal');
+	var i;
+	for(var j=0;j<$machine.length;j++){
+		if($machine[j].id==idname)
+			i=j;
+	}
+		$.get('/newclock/server/info.php',{type:4,filename:idname,num:i},function(jsondata,i){
+			var data=eval(jsondata);
+			var infostring='<p>'+data[0]+'<br /><br /> '+data[1]+'<br> '+data[2]+'<br> '+data[3]+'</p>';
+			var num=data[4];
+			$testtemp=$(infostring);
+			//$divids=abs((int)(data[3]));
+			$divids=Math.abs(parseInt(data[3]));
+			if($divids>200){
+				if(!$($machine[num]).hasClass('danger')){
+					dangerous++;
+					//writelog("主机:"+data[0]+"时间异常！！");
+				}
+				$($machine[num]).removeClass('showtime');
+				$($machine[num]).addClass('danger');
+				
+			}
+			else{
+				if($($machine[num]).hasClass('danger')){
+					dangerous--;
+					//writelog("主机:"+data[0]+"从异常中恢复");
+				}
+				$($machine[num]).removeClass('danger');
+				$($machine[num]).addClass('showtime');
+				
+			}
+			//alert(data[3]);
+			if($divids>max){
+				//alert(data[3]);
+				max=$divids;
+			}
+				
+			$($machine[num]).empty();
+			$testtemp.appendTo($($machine[num]));
+			//$machine[num].textContent=infostring;
+			//console.log($machine[num].textContent);
+		});
+	
+}
+
+function new_refresh_time(){
+	$machine=$('.normal');
+	for(var i=0;i<$machine.length;i++){
+		var idname=$machine[i].id;
+		var stand;
+		get_mod_time(idname,stand);
+	}
+}
+
+
+
 //refresh_time();
 //var si=setInterval(refresh_time,1000);
 
@@ -279,6 +339,37 @@ function addstand(){
 	$(strtmp).appendTo($('#standtime'));
 }
 
+
+function comp_mod_time($filename,$stand,$timer){
+	$.get('/newclock/server/info.php',{type:6,filename:$filename},function(data){
+		if(data!=$stand){
+			clearInterval($timer);
+			//get_new_time($fill)
+			setInterval(function(){get_new_time($filename);},300000);
+		}
+	});
+}
+
+function get_mod_time($filename,$stand){
+	$.get('/newclock/server/info.php',{type:6,filename:$filename},function(data){
+		$stand=data;
+		var time1=setInterval(function(){comp_mod_time($filename,$stand,time1)},1000);
+	});
+}
+
+//alert(get_mod_time('127.0.0.2.txt'));
+
+
+//setInterval(function(){get_mod_time('127.0.0.1.txt');},5000);
+//get_mod_time('127.0.0.1.txt');
+function is_modified($filename){
+	var stand;
+	get_mod_time($filename,stand);
+	var time1=setInterval(function(){comp_mod_time($filename,stand,time1)},1000);
+}
+
+//var stand;
+//get_mod_time('127.0.0.2.txt',stand);
 
 });
 

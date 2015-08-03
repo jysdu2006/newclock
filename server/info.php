@@ -86,6 +86,12 @@ if($type==='5'){
 	echo(json_encode($data));
 }
 
+if($type==='6'){
+	$filename=$_GET['filename'];
+	$filename="d:/clock/result/".$filename.".txt";
+	echo(filemtime($filename));
+}
+
 /*
 if($type==='2'){
 	$num=$_GET['num'];
