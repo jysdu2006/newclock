@@ -69,6 +69,8 @@ function execute_time(){
 		var $temp=$(temp);
 		$('#standtime').empty();
 		$temp.appendTo($('#standtime'));
+		var stand;
+		get_stand_time("stand",stand);
 	});
 }
 
@@ -77,7 +79,7 @@ get_part();
 //setInterval(get_part,10000);
 execute_time();
 setInterval(addstand,1000);
-setInterval(execute_time,10000);
+//setInterval(execute_time,10000);
 
 
 
@@ -350,10 +352,28 @@ function comp_mod_time($filename,$stand,$timer){
 	});
 }
 
+
+function comp_stand_time($filename,$stand,$timer){
+	$.get('/newclock/server/info.php',{type:6,filename:$filename},function(data){
+		if(data!=$stand){
+			clearInterval($timer);
+			//get_new_time($fill)
+			setInterval(execute_time,300000);
+		}
+	});
+}
+
 function get_mod_time($filename,$stand){
 	$.get('/newclock/server/info.php',{type:6,filename:$filename},function(data){
 		$stand=data;
 		var time1=setInterval(function(){comp_mod_time($filename,$stand,time1)},1000);
+	});
+}
+
+function get_stand_time($filename,$stand){
+	$.get('/newclock/server/info.php',{type:6,filename:$filename},function(data){
+		$stand=data;
+		var time1=setInterval(function(){comp_stand_time($filename,$stand,time1)},1000);
 	});
 }
 
