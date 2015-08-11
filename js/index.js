@@ -69,8 +69,8 @@ function execute_time(){
 		var $temp=$(temp);
 		$('#standtime').empty();
 		$temp.appendTo($('#standtime'));
-		var stand;
-		get_stand_time("stand",stand);
+		// var stand;
+		// get_stand_time("stand",stand);
 	});
 }
 
@@ -78,6 +78,8 @@ get_part();
 //execute_time();
 //setInterval(get_part,10000);
 execute_time();
+var stand;
+get_stand_time("stand",stand);
 setInterval(addstand,1000);
 //setInterval(execute_time,10000);
 
@@ -93,7 +95,7 @@ function refresh_time(){
 			var num=data[4];
 			$testtemp=$(infostring);
 			//$divids=abs((int)(data[3]));
-			$divids=Math.abs(parseInt(data[3]));
+			$divids=Math.abs(parseInt(data[3]),10);
 			if($divids>200){
 				if(!$($machine[num]).hasClass('danger')){
 					dangerous++;
@@ -141,7 +143,7 @@ function get_new_time(idname){
 			var num=data[4];
 			$testtemp=$(infostring);
 			//$divids=abs((int)(data[3]));
-			$divids=Math.abs(parseInt(data[3]));
+			$divids=Math.abs(parseInt(data[3]),10);
 			if($divids>200){
 				if(!$($machine[num]).hasClass('danger')){
 					dangerous++;
@@ -259,7 +261,7 @@ function timeadd($time){
 	$tmp=$time.split(':');
 	data=new Array();
 	for(var i=0;i<$tmp.length;i++)
-		data[i]=parseInt($tmp[i]);
+		data[i]=parseInt($tmp[i],10);
 	$flag=(data[2]+1)/60;
 	$flag1=Math.floor($flag);
 	data[2]=(data[2]+1)%60;
@@ -282,7 +284,7 @@ function dayadd($day,$partion){
 	$tmp=$day.split($partion);
 	data=new Array();
 	for(var i=0;i<$tmp.length;i++)
-		data[i]=parseInt($tmp[i]);
+		data[i]=parseInt($tmp[i],10);
 	if(data[1]===1|data[1]===3|data[1]===5|data[1]===7|data[1]===8|data[1]===10|data[1]===12){
 		$flag=(data[2]+1)/32;
 		$flag=Math.floor($flag);
